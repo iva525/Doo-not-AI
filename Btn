@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Смена фона</title>
+    <style>
+        /* Делаем плавный переход для красоты */
+        body {
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+<body id="pageBody"> <!-- даём тегу body id, чтобы его было легко найти -->
+
+    <button id="themeBtn">Переключить фон</button>
+
+    <p>Нажимай на кнопку — фон меняется</p>
+
+    <script>
+        // Находим тело и кнопку
+        const body = document.getElementById('pageBody');
+        const btn = document.getElementById('themeBtn');
+
+        // Добавляем слушатель клика
+        btn.addEventListener('click', function() {
+            // Проверяем текущий цвет фона
+            if (body.style.backgroundColor === 'black' || body.style.backgroundColor === 'rgb(0,0,0)') {
+                // Если чёрный — делаем белым
+                body.style.backgroundColor = 'white';
+                // Для контраста меняем цвет текста (чтобы видно было)
+                body.style.color = 'black';
+            } else {
+                // Иначе — ставим чёрный
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+            }
+        });
+    </script>
+
+</body>
+</html>
